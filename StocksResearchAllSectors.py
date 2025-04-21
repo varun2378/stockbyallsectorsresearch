@@ -16,7 +16,7 @@ data_folder = r"./StockAnalysisData"
 sector_symbols_map = {}
 
 excel_files = glob.glob(os.path.join(data_folder, "sp500_*_stocks.xlsx"))
-#st.write(f"TEST {excel_files}")
+
 for file in excel_files:
     try:
         df = pd.read_excel(file)
@@ -24,8 +24,7 @@ for file in excel_files:
         symbols = df['Symbol'].dropna().tolist()[:2]
         if symbols:
             sector_symbols_map[sector] = symbols
-            st.write(f"✅ Loaded 2 symbols from {sector}: {symbols}")
-
+            print(f"✅ Loaded 2 symbols from {sector}: {symbols}")
     except Exception as e:
         print(f"⚠️ Skipping {file}: {e}")
 
@@ -35,7 +34,7 @@ all_symbols = [symbol for symbol_list in sector_symbols_map.values() for symbol 
 # Alpha Vantage functions
 
 # Create a persistent cache folder
-cache_dir = r"./api_cache"
+cache_dir = r"./StockAnalysisData/api_cache"
 os.makedirs(cache_dir, exist_ok=True)
 
 @st.cache_data(ttl=86400)
