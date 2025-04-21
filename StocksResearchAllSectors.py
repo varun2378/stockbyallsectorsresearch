@@ -7,7 +7,7 @@ import streamlit as st
 import json
 import hashlib
 
-st.set_page_config(page_title="Sector-Wise Stock Financials**", layout="wide")
+st.set_page_config(page_title="Sector-Wise Stock Financials****", layout="wide")
 
 API_KEY = "874WVCYGCPDM9YVS"
 data_folder = r"./StockAnalysisData"
