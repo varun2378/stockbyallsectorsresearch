@@ -155,7 +155,7 @@ def get_full_data(symbols):
 df = get_full_data(all_symbols)
 
 # Step 3: Streamlit UI
-st.title("📊 US Stocks – Sector-wise Financial Dashboard")
+st.title("📊 US Stocks – Sector-wise Financial Dashboard****")
 
 if df.empty:
     st.warning("No data found.")
